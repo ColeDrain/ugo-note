@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Start: content -->
+    <div class="container">
+        <!-- Start: about-section -->
+        <div>
+            <h2 class="text-center">About Me</h2>
+            <!-- Start: my picture -->
+            <div class="text-center"><img class="img-fluid" src="{% static 'img/circle-cropped(2).png' %}" width="150" alt="Page owner pic"></div>
+            <!-- End: my picture -->
+            <!-- Start: about-text -->
+            <div>
+                <p class="text-monospace text-center about-text">My name is Ugochukwu, but they call me that only at home,<i class="far fa-laugh-beam" style="font-size: 25px;"></i> lolz.<br><br>Well, this is me exploring my creative side, being a better writer, sharing discoveries, opinions and knowledge.
+                    <br><br>Thanks for reading, and enjoy the site.</p>
+            </div>
+            <!-- End: about-text -->
+        </div>
+        <!-- End: about-section -->
+    </div>
+    <!-- End: content -->
+{% endblock content %}

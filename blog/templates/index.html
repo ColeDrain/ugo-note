@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Start: content -->
+<main>
+    <!-- Start: posts -->
+    <div class="container">
+        <div class="d-flex justify-content-center"><span style="font-size: 20px;opacity: 0.42;">ALL POSTS</span></div>
+        <hr>
+        <!-- Start: post -->
+        
+        {% for post in posts %}
+        <div>
+            <a class="text-dark post-title" href="{{ post.get_absolute_url }}" style="text-decoration: none;">
+                <h2 class="text-left">{{ post.title }}</h2>
+            </a>
+            <small>{{post.created_date | date}} |&nbsp;
+                {% for tag in post.tags.all %}
+                <a class="text-muted" href="{% url 'tag_detail' tag.slug %}" style="text-decoration: none;">
+                    #{{ tag }}
+                </a>
+                {% endfor %}
+            </small>
+            <p>{{ post.cover_text }}</p><a class="btn border-dark" role="button" data-bs-hover-animate="shake"
+                href="{{ post.get_absolute_url }}">Continue reading&nbsp;<i class="fas fa-long-arrow-alt-right"
+                    style="vertical-align: middle;"></i></a>
+            <hr>
+        </div>
+        {% endfor %}
+        <!-- End: post -->
+    </div>
+    <!-- End: posts -->
+</main>
+<!-- End: content -->
+{% endblock content %}

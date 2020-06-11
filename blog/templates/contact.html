@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container" style="max-width: 960px;">
+    <p class="text-center lead">Feel free to contact me via email using the form below, or connect on social media using
+        the social icons on the page.</p>
+</div>
+<!-- Start: Contact Form Clean -->
+<div class="contact-clean" style="background-color: rgb(255,255,255);padding-top: 0px;">
+    <form action="" method='post' novalidate>
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">send</button>
+        {% endbuttons %}
+    </form>
+</div>
+<!-- End: Contact Form Clean -->
+{% endblock content %}
